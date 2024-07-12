@@ -1,0 +1,514 @@
+label,
+.text-label {
+    color: var(--blue-dark);
+}
+
+label.playerScore {
+    margin: auto;
+    font-size: 20px;
+    padding : 10px 0;
+}
+
+.form_wrapper,
+.modal_success,
+.form_wrapper_add,
+.modal_success_add,
+.score_wrapper_add {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(26, 39, 156, 0.4);
+    z-index: 2000;
+}
+
+.form_wrapper_content,
+.modal_content {
+    width: 95%;
+    border-radius: 10px;
+    background: var(--grey-moon);
+    color: var(--blue-dark);
+    animation: modalopen .4s ease-in-out;
+}
+
+.form_wrapper_content {
+    position: relative;
+    padding: 40px 40px 20px;
+    max-width: 500px;
+}
+
+.blockImg {
+    display: flex;
+    gap: 30px;
+
+}
+
+.fa-image-portrait {
+    font-size: 30px;
+}
+
+.links {
+    font-size: 18px;
+    text-decoration: underline var(--blue-dark);
+    margin-left: 20px;
+}
+
+.formulaire,
+.modalScore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    margin: 10px;
+}
+
+.title_form {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bolder;
+    color: var(--blue-dark);
+}
+
+.title_score {
+    font-size: 20px;
+  font-weight: bolder;
+  color: var(--blue-dark);
+}
+
+
+.modal_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    max-width: 600px;
+}
+
+.modal_content h2 {
+    text-align: center;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 100;
+    font-family: "DMSans-Regular", sans-serif;
+}
+
+.form_data {
+    margin: 30px 0;
+}
+
+label,
+.text-label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: clamp(1.4rem, 1.5vw, 1.6rem);
+    font-family: "DMSans-Regular", sans-serif;
+}
+
+label {
+    display: inline-block;
+}
+
+input.input_modal {
+    padding: 8px;
+    border-radius: 8px;
+    font-size: clamp(2.1rem, 1.4vw, 1.4rem);
+    height: clamp(40px, 5vw, 50px);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    outline: none;
+    border: 0.8px solid #ccc;
+    font-family: "DMSans-Regular", sans-serif;
+}
+
+#birthdate.input_modal {
+    max-width: 175px;
+
+}
+
+.form_data[data-error]::after {
+    content: attr(data-error);
+    font-size: clamp(1.2rem, 1.2vw, 1.2rem);
+    color: var(--red-highlight);
+    display: block;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    line-height: 1;
+    opacity: 0;
+    transition: 0.3s;
+    font-family: "Roboto", sans-serif;
+}
+
+.form_data[data-error-visible="true"]::after {
+    opacity: 1;
+}
+
+.form_data .invalid {
+    border: 3px solid var(--red-highlight);
+}
+
+.form_data .valid {
+    border: 3px solid var(--green-highlight);
+}
+
+.btn_close,
+.btn_close_sign,
+.btn_close2 {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(0.7);
+    background-color: var(--blue-dark);
+    border-radius: 10px;
+    border: 3px solid var(--green-highlight);
+    padding: 3px;
+}
+
+.btn_close {
+    right: 11px;
+    top: 11px;
+}
+
+.btn_close_sign,
+.btn_close2 {
+    right: 80px;
+    top: 100px;
+}
+
+.btn_close:hover,
+.btn_close_sign:hover,
+.btn_close2:hover {
+    transform: translate (-6px, -6px);
+    background: var(--green-highlight);
+}
+
+
+.btn_close::before,
+.btn_close::after,
+.btn_close_sign::before,
+.btn_close_sign::after,
+.btn_close2::before,
+.btn_close2::after {
+    position: absolute;
+    left: 15px;
+    content: " ";
+    height: 28px;
+    width: 3px;
+    background-color: white;
+
+}
+
+.btn_close::before,
+.btn_close_sign::before,
+.btn_close2::before {
+    transform: rotate(45deg);
+}
+
+.btn_close::after,
+.btn_close_sign::after,
+.btn_close2::after {
+    transform: rotate(-45deg);
+}
+
+.fa-bars {
+    color: var(--green-highlight);
+}
+
+.btn_close:hover,
+.btn_close:focus,
+.btn_close_sign:hover,
+.btn_close_sign:focus,
+.btn_close2:hover,
+.btn_close2:focus {
+    background: var(--blue-highlight);
+    color: white;
+}
+
+
+.btn_update,
+.btn_score {
+    display: block;
+    position: relative;
+    width: 110px;
+    margin: 10px auto;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: black;
+    padding: 4px 0px;
+    border-radius: 10px;
+    background: var(--green-highlight);
+    color: white;
+}
+
+.btn_update:hover,
+.btn_score:hover {
+    background: var(--blue-dark);
+}
+
+
+
+.btn_submit,
+.btn_register_player,
+.btn_register_referee,
+.btn_signup,
+.btn_signout,
+.btn_sign {
+    display: block;
+    margin: 10px auto;
+    font-size: 20px;
+    font-weight: lighter;
+    background-color: black;
+    padding: 10px 30px;
+    border-radius: 10px;
+    background: var(--blue-dark);
+    color: white;
+    outline: none;
+    border: none;
+    position: relative;
+    box-shadow: 9px 9px 6px var(--green-highlight);
+}
+
+
+
+.btn_signout
+ {    
+    background: red;  
+    box-shadow: 9px 9px 6px var(--green-highlight);
+}
+
+.show {
+    display : inline-block;
+}
+.hide {
+    display : none;
+}
+
+
+
+
+
+
+
+
+
+
+
+.btn_submit:hover,
+.btn_register_player:hover,
+.btn_register_referee:hover,
+.btn_signup:hover,
+.btn_signout:hover,
+.btn_sign:hover,
+.btn__update:hover {
+    box-shadow: 7px 7px 4px var(--green-highlight);
+    top: 2px;
+}
+
+.btn_submit:active,
+.btn_register_player:active,
+.btn_register_referee:active,
+.btn_signup:active,
+.btn_signout:active,
+.btn_sign:active,
+.btn__update:active {
+    box-shadow: 5px 5px 2px var(--green-highlight);
+    top: 6px;
+
+}
+
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 10px;
+    right: 13px;
+    width: 11px;
+    height: 11px;
+    border: 3px solid transparent;
+    border-bottom-color: var(--red-highlight);
+    border-left-color: var(--red-highlight);
+    transform: rotate(-48deg);
+    border-radius: 5px 0 5px 0;
+}
+
+/* Point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+    transform: rotate(135deg);
+    top: 13px;
+}
+
+.select-items div,
+.select-selected {
+    color: var(--dark);
+    padding: 11px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    border-radius: 8px;
+    height: 48px;
+}
+
+/* Style items (options): */
+.select-items {
+    position: absolute;
+    background-color: var(--light);
+    top: 89%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+/* Hide the items when the select box is btn-closed: */
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/*.btn_submit {
+    margin: 20px 279px;
+}*/
+
+/* Animation */
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/*modal add player, add referee */
+.form_wrapper_container,
+.score_wrapper_container {
+    display: flex;
+    justify-content: center;
+    background-color: #279e7a;
+    border-radius: 30px;
+    padding: 30px;
+    height: 80%;
+    width: 93%;
+}
+
+.score_wrapper_container{
+    flex-direction:column;
+}
+
+.score-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+.score__section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.score__card {
+    background-color: black;
+    color: #fcee21;
+    margin: 50px 0;
+  padding: 20px;
+      display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+.score__player, .score__playerName {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.score__player {
+    width : 50%;
+}
+.score__playerName {
+    width : 50%;
+}
+    
+.score__player1, .score__player2 {
+    display : flex;
+    flex-direction : row;
+}
+
+h2.score__name{    
+    margin : 0 10px;
+    font-size: 40px;
+}
+
+h2.score__point {
+   
+    font-weight: bolder;
+    margin :  0 20px;
+    font-size: 40px;
+}
+
+
+.player-score {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+
+}
+
+.score-button {
+    display: block;
+    margin: 10px auto;
+    font-size: 40px;
+    font-weight: lighter;
+    background-color: black;
+    padding: 10px 30px;
+    border-radius: 10px;
+    background: var(--blue-dark);
+    color: white;
+    outline: none;
+    border: none;
+    position: relative;
+    box-shadow: 6px 6px 0px var(--green-highlight);
+}
+
+
+
+
+
+.blockFormDataName,
+.blockFormDataInfo,
+.formWrapperData,
+.localData {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.form3 {
+    gap: 30px;
+}
+
+.icone_img {
+    width: 60px;
+}
+
+.checkbox-icon {
+    background-color: white;
+}
